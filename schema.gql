@@ -1,0 +1,42 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Prompt {
+  """id of the prompt"""
+  promptId: String!
+
+  """title of the prompt"""
+  title: String!
+
+  """content of the prompt"""
+  content: String!
+}
+
+type Query {
+  prompts: [Prompt!]!
+  prompt(promptId: String!): Prompt!
+}
+
+type Mutation {
+  createPrompt(createPromptInput: CreatePromptInput!): Prompt!
+  updateUser(updateUserInput: UpdatePromptInput!): Prompt!
+  removeUser(promptId: String!): Prompt!
+}
+
+input CreatePromptInput {
+  """title of the prompt"""
+  title: String!
+
+  """content of the prompt"""
+  content: String!
+}
+
+input UpdatePromptInput {
+  """title of the prompt"""
+  title: String
+
+  """content of the prompt"""
+  content: String
+  promptId: String!
+}
